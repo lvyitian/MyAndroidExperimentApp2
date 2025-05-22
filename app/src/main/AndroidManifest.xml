@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.lyt23210118">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Lyt23210118">
+        <activity android:name=".LoginActivity" android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN">
+
+                </action>
+                <category android:name="android.intent.category.LAUNCHER">
+
+                </category>
+            </intent-filter>
+        </activity>
+        <activity android:name=".OperateActivity" android:launchMode="singleTask">
+
+        </activity>
+        <activity android:name=".ManageActivity" android:launchMode="singleTask">
+
+        </activity>
+    </application>
+</manifest>

@@ -1,0 +1,43 @@
+package com.example.lyt23210118;
+
+import android.content.Context;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import java.util.concurrent.CopyOnWriteArraySet;
+import java.util.function.Consumer;
+
+public class StudentInfoFragment extends Fragment {
+    public final int layout;
+    public final CopyOnWriteArraySet<Consumer<Bundle>> onCreateCallbacks=new CopyOnWriteArraySet<>();
+    public StudentInfoFragment(){this(R.layout.student_info);}
+    public StudentInfoFragment(int layout){this.layout=layout;}
+    @Override
+    public void onAttach(Context context) {
+
+        super.onAttach(context);
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        this.onCreateCallbacks.forEach(i->i.accept(savedInstanceState));
+        super.onCreate(savedInstanceState);
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(this.layout,container,false);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+
+        super.onActivityCreated(savedInstanceState);
+    }
+}
